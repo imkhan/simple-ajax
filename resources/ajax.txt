@@ -1,0 +1,1 @@
+A text based files which would be accessed with Ajax.

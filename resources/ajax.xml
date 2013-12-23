@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<ajax>
+
+    <heading>Steps</heading>
+    <steps>
+        <step>Create an ajax object</step>
+        <step>Handle onreadystatechange event</step>
+        <step>Open an ajax request</step>
+        <step>Send ajax request with or without data </step>
+    </steps>
+</ajax>
