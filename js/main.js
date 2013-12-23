@@ -17,15 +17,28 @@
 
     link.onclick = function(){
 
-//        fetchTxtFile(resources.txt);
+        fetchTxtFile(resources.text);
 //        fetchHtmlFile(resources.html);
 //        fetchJsonFile(resources.json);
-        fetchXmlFile(resources.xml);
+//        fetchXmlFile(resources.xml);
 
         document.body.removeChild(link);
 
     }
 })();
+
+function fetchTxtFile(url){
+    simpleAjax.ajax(url,{
+        method:'GET',
+        complete:function(response){
+            var body = document.body;
+            var div = document.createElement('div');
+            div.innerHTML = response;
+            body.appendChild(div);
+        }
+    });
+
+}
 
 function fetchXmlFile(url){
     simpleAjax.ajax(url,{

@@ -1,1 +1,1 @@
-A text based files which would be accessed with Ajax.
+[This text including square brackets is fetched through an ajax call from a text file "resources/ajax.txt" without refreshing the page]
