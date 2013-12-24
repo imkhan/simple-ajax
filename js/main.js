@@ -17,10 +17,10 @@
 
     link.onclick = function(){
 
-        fetchTxtFile(resources.text);
+//        fetchTxtFile(resources.text);
 //        fetchHtmlFile(resources.html);
 //        fetchJsonFile(resources.json);
-//        fetchXmlFile(resources.xml);
+        fetchXmlFile(resources.xml);
 
         document.body.removeChild(link);
 
@@ -40,17 +40,33 @@ function fetchTxtFile(url){
 
 }
 
+function fetchHtmlFile(url){
+    simpleAjax.ajax(url,{
+        method:'GET',
+        complete:function(response){
+            var body = document.body;
+            //logic to append response data in body
+            body.appendChild();
+        }
+    });
+}
+function fetchJsonFile(url){
+    simpleAjax.ajax(url,{
+        method:'GET',
+        complete:function(response){
+            var body = document.body;
+            //logic to append response data in body
+            body.appendChild();
+        }
+    });
+}
 function fetchXmlFile(url){
     simpleAjax.ajax(url,{
         method:'GET',
         complete:function(response){
             var body = document.body;
-            /* to handle html response
-             var div = document.createElement('div');
-             div.innerHTML = xhr.responseText;
-             body.appendChild(div);
-             */
-            var heading =  response.getElementsByTagName('heading')[0].firstChild.nodeValue;
+
+            var heading =  response.getElementsByTagName('heading')[0].firstChild.nodeValue; //.firstChild.nodeValue is used to extract text
             var h2 = document.createElement('h2');
             var h2Text = document.createTextNode(heading);
             h2.appendChild(h2Text);
